@@ -6,7 +6,7 @@
 /*   By: rlopez-m <rlopez-m@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 16:34:39 by rlopez-m          #+#    #+#             */
-/*   Updated: 2021/12/21 19:23:25 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 21:48:55 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,27 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 		dest[aux] = '\0';
 		aux++;
 	}
+	return (dest);
+}
+
+char	*ft_strcat(char *dest, char *src)
+{
+	int	i;
+	int	d;
+	int	s;
+
+	d = 0;
+	while (dest[d])
+		d++;
+	s = 0;
+	while (src[s])
+		s++;
+	i = 0;
+	while (i < s)
+	{
+			dest[i + d] = src[i];
+			i++;
+	}
+	dest[i + d] = '\0';
 	return (dest);
 }

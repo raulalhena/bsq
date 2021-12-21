@@ -6,7 +6,7 @@
 /*   By: jventura <jventura@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:08:36 by jventura          #+#    #+#             */
-/*   Updated: 2021/12/21 19:32:16 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 21:37:18 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	print_and_free_map(t_map *map)
 		ft_putchar('\n');
 		i++;
 	}
-	free(map);
+	free_map(map);
 }
 
 void	free_map(t_map *map)

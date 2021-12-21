@@ -6,7 +6,7 @@
 /*   By: amantara <amantara@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:38:26 by amantara          #+#    #+#             */
-/*   Updated: 2021/12/21 20:28:05 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 21:41:35 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	validate_at_least_one_empty(char *map, char empty)
 }
 
 // Validamos si tiene los valores correctos el mapa.
-int	check_char(char *map, char obstacle, char empty, char number)
+int	check_char(char *map, char obstacle, char empty)
 {
 	int	i;
 
@@ -73,7 +73,7 @@ int	check_char(char *map, char obstacle, char empty, char number)
 	i++;
 	while (map[i])
 	{
-		if (map[i] != obstacle && map[i] != empty && map[i] != '\n' )
+		if (!(map[i] == obstacle || map[i] == empty || map[i] == '\n'))
 			return (-1);
 		i++;
 	}
@@ -87,7 +87,7 @@ int	validate_row_number(char *map, int number)
 	int	count;
 
 	i = 0;
-	count = 0;
+	count = -1;
 	while (map[i])
 	{
 		if (map[i] == '\n')
@@ -101,23 +101,21 @@ int	validate_row_number(char *map, int number)
 
 int	validate_map(char *buff, t_map *map)
 {
-	int	num_rows;
-	int	num_cols;
-	char *first_line;
-	int	len;
+	int		num_rows;
+	int		num_cols;
+	char	*first_line;
+	int		len;
 
 	len = ft_strlen2(buff);
 	first_line = malloc((len + 1) * sizeof(char));
-	ft_strncpy(first_line, buff, len + 1);
+	ft_strncpy(first_line, buff, len);
 	if (!first_line)
 		return (print_error(2));
+	first_line[len] = '\0';
 	num_rows = validate_print_char(first_line, map);
 	if (validate_row_number(buff, num_rows) == -1)
-	{
-		write(1, "A", 1);
 		return (print_error(3));
-	}
-	else if (check_char(buff, map->obstacle, map->empty, num_rows) == -1)
+	else if (check_char(buff, map->obstacle, map->empty) == -1)
 		return (print_error(3));
 	else if (validate_at_least_one_empty(buff, map->empty) == -1)
 		return (print_error(3));

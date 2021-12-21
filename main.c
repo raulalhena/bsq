@@ -6,7 +6,7 @@
 /*   By: rlopez-m <rlopez-m@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 16:26:36 by rlopez-m          #+#    #+#             */
-/*   Updated: 2021/12/21 19:55:17 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 21:37:58 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	solve_single_map(char *file)
 {
 	t_map	map;
 	char	*str;
-	
+
 	if (file)
 	{
 		if (read_file(file, &str))
@@ -55,7 +55,6 @@ int	main(int argc, char *argv[])
 		i = 1;
 		while (i < argc)
 			solve_single_map(argv[i++]);
-
 	}
 	else if (argc == 1)
 		solve_single_map(NULL);

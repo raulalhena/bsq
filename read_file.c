@@ -6,12 +6,13 @@
 /*   By: mfort-pe <mfort-pe@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:24:35 by mfort-pe          #+#    #+#             */
-/*   Updated: 2021/12/21 19:57:11 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 21:38:40 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
-int	print_error(int	error);
+
+int	print_error(int error);
 
 int	read_file(char *filename, char **str)
 {
