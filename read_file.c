@@ -6,37 +6,36 @@
 /*   By: mfort-pe <mfort-pe@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:24:35 by mfort-pe          #+#    #+#             */
-/*   Updated: 2021/12/21 16:31:00 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:11:43 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 
-char	*read_file(char *filename, char **p)
+int	read_file(char *filename, char **str)
 {
 	int		fd;
 	char	buff[SIZE];
 	int		count;
-	int		a;
+	int		aux_count;
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		return ("File error\n");
+		return (print_error(1));
 	count = 0;
-	a = 1;
-	while (a)
+	aux_count = 1;
+	while (aux_count)
 	{
-		a = read(fd, buff, SIZE);
-		count += a;
+		aux_count = read(fd, buff, SIZE);
+		count += aux_count;
 	}
-	*p = malloc(sizeof(char) * count);
-	if (!*p || close(fd))
-		return ("Error\n");
+	*str = malloc(sizeof(char) * count);
+	if (!*str || close(fd))
+		return (print_error(1));
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		return ("File error\n");
-	read(fd, *p, count);
+		return (print_error(1));
+	read(fd, *str, count);
 	if (close(fd))
-		return ("File error\n");
-	return (*p);
+		return (print_error(1));
 }

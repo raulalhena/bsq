@@ -6,19 +6,18 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 16:28:59 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 16:29:38 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:13:47 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 
-char	*read_input(char **p)
+int	read_input(char **str)
 {
-	int	a;
+	int	str_size;
 
-	a = read(0, *p, SIZE);
-	*p = malloc(sizeof(char) * a);
-	if (!*p)
-		return ("Memory error\n");
-	return (*p);
+	str_size = read(0, *str, SIZE);
+	*str = malloc(sizeof(char) * str_size);
+	if (!*str)
+		return (print_error(2));
 }

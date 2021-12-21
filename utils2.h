@@ -1,54 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils2.c                                           :+:      :+:    :+:   */
+/*   utils2.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 16:27:17 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 19:23:43 by rlopez-m         ###   ########.fr       */
+/*   Created: 2021/12/21 18:23:41 by gpujol-r          #+#    #+#             */
+/*   Updated: 2021/12/21 18:27:30 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "functions.h"
+#ifndef UTILS2_H
+# define UTILS2_H
 
-void	ft_putchar(char c)
-{
-	write(1, &c, 1);
-}
+# include <unistd.h>
 
-int	ft_strlen(char *str)
-{
-	int	i;
+void	ft_putchar(char c);
+int		ft_strlen(char *str);
+void	ft_putstr(char *str);
+char	*ft_strcpy(char *dest, char *src);
+char	*ft_strncpy(char *dest, char *src, int size);
 
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
-}
-
-char	*ft_strcpy(char *dest, char *src)
-{
-	int	i;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	dest[i] = '\0';
-	return (dest);
-}
+#endif

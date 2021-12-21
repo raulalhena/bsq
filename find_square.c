@@ -6,13 +6,11 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:01:16 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 14:05:12 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 18:28:29 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
-
-int	create_map(t_map *map);
 
 int	check_current_square(t_map map, int x, int y, int *square_size)
 {
