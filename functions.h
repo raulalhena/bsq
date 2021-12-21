@@ -6,7 +6,7 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:41:21 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 12:02:56 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 12:35:11 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <stdio.h>
 # include <unistd.h>
-# include <fnctl.h>
+# include <fcntl.h>
 # include <stdlib.h>
 
 typedef struct s_map{
@@ -23,7 +23,6 @@ typedef struct s_map{
 	int		start_x;
 	int		start_y;
 	int		max;
-	int		map_size;
 	int		rows;
 	int		cols;
 	char	empty;
