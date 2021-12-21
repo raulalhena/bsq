@@ -6,7 +6,7 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:41:21 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 12:35:11 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:21:07 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,10 @@ typedef struct s_map{
 
 char	*read_input(void); // Miguel
 char	*read_file(char *argv); // Miguel
-int		validate_map(char *buff, t_map map); // Albert
-void	resolve_map(char *buff, t_map map); // Gabriel
+int		validate_map(char *buff, t_map *map); // Albert
+void	resolve_map(char *buff, t_map *map); // Gabriel
 void	print_map(t_map map); // Julia
-void	free_map(t_map map); // Julia
+void	free_map(t_map *map); // Julia
 int		ft_atoi(char *str); // to customize
 int		ft_strlen(char *str);
 void	ft_putchar(char c);

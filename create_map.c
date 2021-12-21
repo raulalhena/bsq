@@ -3,19 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   create_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
+/*   By: mmompart <mmompart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 11:54:14 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 12:00:43 by gpujol-r         ###   ########.fr       */
+/*   Created: 2021/12/21 12:17:19 by mmompart          #+#    #+#             */
+/*   Updated: 2021/12/21 13:42:31 by mmompart         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 
-//map.map = malloc numero de filas
-//bucle para cada fila malloc num columnas
-
-int create_map(t_map *map)
+void	free_mallocs(char ***map, int i)
 {
+	i--;
+	while (i >= 0)
+	{
+		free(*map[i]);
+		i--;
+	}
+	free(*map);
+}
 
+int	create_map(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	map->map = malloc(map->rows * sizeof(char *));
+	if (map->map == NULL)
+		return (1);
+	while (i < map->rows)
+	{
+		map->map[i] = malloc (map->cols * sizeof(char));
+		if (map->map[i] == NULL)
+		{
+			free_mallocs(&map->map, i);
+			return (1);
+		}
+		i++;
+	}
+	return (0);
 }
