@@ -6,7 +6,7 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:59:59 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 15:00:30 by ffornes-         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:30:59 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 //guardar cada caracter a partir de la segunda fila en cada casilla del mapa
 
-void	map_string(char *buff, t_map map)
+void	map_string(char *buff, t_map *map)
 {
 	int	i;
 	int	j;
@@ -24,11 +24,11 @@ void	map_string(char *buff, t_map map)
 	while (*buff != '\n')
 		buff++;
 	buff++;
-	while (i < map.rows && j < map.cols + 1)
+	while (i < map->rows && j < map->cols + 1)
 	{
 		if (*buff != '\n')
 		{
-			map.map[i][j] = *buff;
+			map->map[i][j] = *buff;
 			j++;
 		}
 		else

@@ -6,7 +6,7 @@
 /*   By: rlopez-m <rlopez-m@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 16:26:36 by rlopez-m          #+#    #+#             */
-/*   Updated: 2021/12/21 19:18:52 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:28:59 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,18 +29,21 @@ void	solve_single_map(char *file)
 	char	*str;
 	
 	if (file)
+	{
 		if (read_file(file, &str))
 			return ;
+	}
 	else
+	{
 		if (read_input(&str))
 			return ;
+	}
 	if (!validate_map(str, &map))
 	{
-		if (!resolve_map(&map))
+		if (!resolve_map(str, &map))
 			print_and_free_map(&map);
 	}
 	free(str);
-	return (0);
 }
 
 int	main(int argc, char *argv[])
