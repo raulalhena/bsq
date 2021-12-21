@@ -13,3 +13,15 @@ int ft_strlen(char *str)
     i++;
   return (i);
 }
+
+void  ft_putstr(char *str)
+{
+  int i;
+  
+  i = 0;
+  while (str[i])
+  {
+    write(1, &str[i], 1);
+    i++;
+  }
+}
