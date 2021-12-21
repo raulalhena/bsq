@@ -6,11 +6,12 @@
 /*   By: amantara <amantara@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:38:26 by amantara          #+#    #+#             */
-/*   Updated: 2021/12/21 20:18:22 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 20:28:05 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
+#include "utils2.h"
 
 //Valida que todas las lineas tienen la misma logitud
 //Devuelve el numero de caracteres por linea en caso de ser correcto. 
@@ -103,8 +104,11 @@ int	validate_map(char *buff, t_map *map)
 	int	num_rows;
 	int	num_cols;
 	char *first_line;
+	int	len;
 
-	first_line = malloc(ft_strlen2(buff) * sizeof(char));
+	len = ft_strlen2(buff);
+	first_line = malloc((len + 1) * sizeof(char));
+	ft_strncpy(first_line, buff, len + 1);
 	if (!first_line)
 		return (print_error(2));
 	num_rows = validate_print_char(first_line, map);

@@ -6,7 +6,7 @@
 /*   By: ffusalba <ffusalba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:01:41 by ffusalba          #+#    #+#             */
-/*   Updated: 2021/12/21 20:15:11 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 20:24:28 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ unsigned int	validate_number(char *str, t_map *map)
 
 	i = 0;
 	size = ft_strlen(str);
-	printf("%d\n", size);
 	numrows = malloc(sizeof(char) * (size - 3));
 	numrows = ft_strncpy(numrows, str, size - 3);
 	size3 = size - 3;
@@ -70,6 +69,7 @@ unsigned int	validate_print_char(char *str, t_map *map)
 
 	finalnumber = 0;
 	i = 0;
+	write(1, &str[2], 1);
 	commandsize = ft_strlen2(str);
 	while (str[i] != '\n')
 	{
