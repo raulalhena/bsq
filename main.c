@@ -6,7 +6,7 @@
 /*   By: rlopez-m <rlopez-m@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 16:26:36 by rlopez-m          #+#    #+#             */
-/*   Updated: 2021/12/21 19:28:59 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:55:17 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,9 @@ int	main(int argc, char *argv[])
 	if (argc > 1)
 	{
 		i = 1;
-		while (i < argc - 1)
-			solve_single_map(argv[i]);
+		while (i < argc)
+			solve_single_map(argv[i++]);
+
 	}
 	else if (argc == 1)
 		solve_single_map(NULL);
