@@ -6,7 +6,7 @@
 /*   By: mfort-pe <mfort-pe@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:24:35 by mfort-pe          #+#    #+#             */
-/*   Updated: 2021/12/21 19:33:07 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:34:21 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ int	read_file(char *filename, char **str)
 	read(fd, *str, count);
 	if (close(fd))
 		return (print_error(1));
+	return (0);
 }
