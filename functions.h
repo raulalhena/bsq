@@ -33,7 +33,7 @@ typedef struct s_map{
 }	t_map;
 
 char	*read_input(void); // Miguel
-char	*read_file(char *argv, char *p); // Miguel
+char	*read_file(char *argv, char **p); // Miguel
 int	validate_map(char *buff, t_map *map); // Albert
 void	resolve_map(char *buff, t_map *map); // Gabriel
 void	print_map(t_map map); // Julia
