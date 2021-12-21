@@ -40,5 +40,6 @@ int		ft_atoi(char *str); // to customize
 int		ft_strlen(char *str);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+void	ft_strcpy(char *str1, char *str2);
 
 #endif
