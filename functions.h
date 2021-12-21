@@ -1,7 +1,10 @@
-#include <stdio.h>
-#include <unistd.h>
-#include <fnctl.h>
-#include <stdlib.h>
+#ifndef FUNCTIONS_H
+# define FUNCTIONS_H
+
+# include <stdio.h>
+# include <unistd.h>
+# include <fnctl.h>
+# include <stdlib.h>
 
 typedef struct s_map{
   char **map;
@@ -21,3 +24,5 @@ int   ft_atoi(char *str); // to customize
 int   ft_strlen(char *str);
 void  ft_putchar(char c);
 void  ft_putstr(char *str);
+
+#endif
