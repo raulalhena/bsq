@@ -1,23 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   read_input.c                                       :+:      :+:    :+:   */
+/*   utils2.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 16:28:59 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 19:13:47 by gpujol-r         ###   ########.fr       */
+/*   Created: 2021/12/21 18:23:41 by gpujol-r          #+#    #+#             */
+/*   Updated: 2021/12/21 18:27:30 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "functions.h"
+#ifndef UTILS2_H
+# define UTILS2_H
 
-int	read_input(char **str)
-{
-	int	str_size;
+# include <unistd.h>
 
-	str_size = read(0, *str, SIZE);
-	*str = malloc(sizeof(char) * str_size);
-	if (!*str)
-		return (print_error(2));
-}
+void	ft_putchar(char c);
+int		ft_strlen(char *str);
+void	ft_putstr(char *str);
+char	*ft_strcpy(char *dest, char *src);
+char	*ft_strncpy(char *dest, char *src, int size);
+
+#endif

@@ -6,7 +6,7 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 16:27:17 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 16:27:56 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 18:27:39 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,27 @@ char	*ft_strcpy(char *dest, char *src)
 		i++;
 	}
 	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_strncpy(char *dest, char *src, int n)
+{
+	unsigned int	len;
+	unsigned int	i;
+
+	len = 0;
+	while (src[len] != '\0')
+	{
+		len++;
+	}
+	i = 0;
+	while (i < n)
+	{
+		if (i >= len)
+			dest[i] = '\0';
+		else
+			dest[i] = src[i];
+		i++;
+	}
 	return (dest);
 }

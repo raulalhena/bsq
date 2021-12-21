@@ -6,13 +6,13 @@
 /*   By: mfort-pe <mfort-pe@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:24:35 by mfort-pe          #+#    #+#             */
-/*   Updated: 2021/12/21 17:34:55 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:11:43 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 
-void	read_file(char *filename, char **str)
+int	read_file(char *filename, char **str)
 {
 	int		fd;
 	char	buff[SIZE];
@@ -21,7 +21,7 @@ void	read_file(char *filename, char **str)
 
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		exit(print_error(1));
+		return (print_error(1));
 	count = 0;
 	aux_count = 1;
 	while (aux_count)
@@ -31,11 +31,11 @@ void	read_file(char *filename, char **str)
 	}
 	*str = malloc(sizeof(char) * count);
 	if (!*str || close(fd))
-		exit(print_error(1));
+		return (print_error(1));
 	fd = open(filename, O_RDONLY);
 	if (fd < 0)
-		exit(print_error(1));
+		return (print_error(1));
 	read(fd, *str, count);
 	if (close(fd))
-		exit(print_error(1));
+		return (print_error(1));
 }

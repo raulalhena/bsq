@@ -6,28 +6,28 @@
 /*   By: jventura <jventura@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:08:36 by jventura          #+#    #+#             */
-/*   Updated: 2021/12/21 16:33:18 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:17:55 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "functions.h"
 
-void	print_map(t_map map)
+void	print_map(t_map *map)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (i < map.rows)
+	while (i < map->rows)
 	{
 		j = 0;
-		while (j < map.cols)
+		while (j < map->cols)
 		{
-			if ((i >= map.start_x && i < (map.start_x + map.max))
-				&& (j >= map.start_y && j < (map.start_y + map.max)))
-				ft_putchar(map.full);
+			if ((i >= map->start_x && i < (map->start_x + map->max))
+				&& (j >= map->start_y && j < (map->start_y + map->max)))
+				ft_putchar(map->full);
 			else
-				ft_putchar(map.map[i][j]);
+				ft_putchar(map->map[i][j]);
 			j++;
 		}
 		ft_putchar('\n');
