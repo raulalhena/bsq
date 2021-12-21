@@ -6,16 +6,14 @@
 /*   By: ffusalba <ffusalba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:01:41 by ffusalba          #+#    #+#             */
-/*   Updated: 2021/12/21 19:18:02 by ffusalba         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:44:03 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <stdlib.h>
 #include "functions.h"
+#include "utils2.h"
 
-int	validatecommand(char *str, t_map *map)
+int	validate_command(char *str, t_map *map)
 {
 	int			size;
 	const char	*last_three = &str[size - 3];
@@ -37,7 +35,7 @@ int	validatecommand(char *str, t_map *map)
 	}
 }
 
-unsigned int	validatenumber(char *str, t_map *map)
+unsigned int	validate_number(char *str, t_map *map)
 {
 	unsigned int	size;
 	int				size3;
@@ -56,14 +54,14 @@ unsigned int	validatenumber(char *str, t_map *map)
 			ft_putstr("Error");
 			return (0);
 		}
-		else if (validatecommand(str, map))
+		else if (validate_command(str, map))
 			return (ft_atoi(numrows));
 		i++;
 	}
 	return (0);
 }
 
-unsigned int	validateprintchar(char *str, t_map *map)
+unsigned int	validate_print_char(char *str, t_map *map)
 {
 	int				commandsize;
 	unsigned int	finalnumber;
@@ -89,5 +87,5 @@ unsigned int	validateprintchar(char *str, t_map *map)
 		}
 		i++;
 	}
-	return (validatenumber(str, map));
+	return (validate_number(str, map));
 }

@@ -6,7 +6,7 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:41:21 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 19:30:21 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:44:53 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,8 @@ void			find_square(t_map *map);
 void			print_and_free_map(t_map *map); // Julia
 void			free_map(t_map *map); // Julia
 unsigned int	ft_atoi(char *str); // to customize
+int				print_error(int error);
+unsigned int	validate_print_char(char *str, t_map *map);
+char			*ft_strncpy(char *dest, char *src, unsigned int n);
 
 #endif
