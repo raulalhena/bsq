@@ -43,5 +43,8 @@ int	ft_strlen(char *str);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
 char	*ft_strcpy(char *str1, char *str2);
+void	map_string(char *buff, t_map *map);
+void	create_map(t_map *map);
+int	find_square(t_map *map);
 
 #endif
