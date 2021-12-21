@@ -36,10 +36,10 @@ int		validate_map(char *buff, t_map map); // Albert
 void	resolve_map(char *buff, t_map map); // Gabriel
 void	print_map(t_map map); // Julia
 void	free_map(t_map map); // Julia
-int		ft_atoi(char *str); // to customize
-int		ft_strlen(char *str);
+int	ft_atoi(char *str); // to customize
+int	ft_strlen(char *str);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
-void	ft_strcpy(char *str1, char *str2);
+char	*ft_strcpy(char *str1, char *str2);
 
 #endif
