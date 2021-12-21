@@ -6,7 +6,7 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:59:59 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 12:03:12 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 15:00:30 by ffornes-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,27 @@
 
 void	map_string(char *buff, t_map map)
 {
-	
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (*buff != '\n')
+		buff++;
+	buff++;
+	while (i < map.rows && j < map.cols + 1)
+	{
+		if (*buff != '\n')
+		{
+			map.map[i][j] = *buff;
+			j++;
+		}
+		else
+		{
+			i++;
+			j = 0;
+			buff++;
+		}
+		buff++;
+	}
 }
