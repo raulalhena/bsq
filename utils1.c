@@ -1,2 +1,3 @@
+#include "functions.h"
 
 // atoi
