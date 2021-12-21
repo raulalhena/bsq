@@ -6,7 +6,7 @@
 /*   By: mmompart <mmompart@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:17:19 by mmompart          #+#    #+#             */
-/*   Updated: 2021/12/21 13:42:31 by mmompart         ###   ########.fr       */
+/*   Updated: 2021/12/21 14:05:43 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,8 @@ int	create_map(t_map *map)
 		}
 		i++;
 	}
+	map->start_x = 0;
+	map->start_y = 0;
+	map->max = 0;
 	return (0);
 }
