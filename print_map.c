@@ -34,6 +34,7 @@ void	print_map(t_map map)
         ft_putchar('\n');
         i++;
     }
+	free(map);
 }
 void    free_map(t_map *map)
 {
