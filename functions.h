@@ -6,7 +6,7 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:41:21 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 13:21:07 by gpujol-r         ###   ########.fr       */
+/*   Updated: 2021/12/21 13:48:59 by gpujol-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,6 @@ int		ft_atoi(char *str); // to customize
 int		ft_strlen(char *str);
 void	ft_putchar(char c);
 void	ft_putstr(char *str);
+char	*ft_strcpy(char *str1, char *str2);
 
 #endif
