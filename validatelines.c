@@ -6,7 +6,7 @@
 /*   By: ffusalba <ffusalba@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 12:01:41 by ffusalba          #+#    #+#             */
-/*   Updated: 2021/12/21 19:44:03 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 20:15:11 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,13 @@ unsigned int	validate_number(char *str, t_map *map)
 
 	i = 0;
 	size = ft_strlen(str);
+	printf("%d\n", size);
 	numrows = malloc(sizeof(char) * (size - 3));
 	numrows = ft_strncpy(numrows, str, size - 3);
 	size3 = size - 3;
 	while (numrows[i])
 	{
-		if (ft_strlen(numrows) > 10 || numrows[i] < '0' || numrows[i] > '9')
+		if (ft_strlen2(numrows) > 10 || numrows[i] < '0' || numrows[i] > '9')
 		{
 			ft_putstr("Error");
 			return (0);
@@ -69,18 +70,18 @@ unsigned int	validate_print_char(char *str, t_map *map)
 
 	finalnumber = 0;
 	i = 0;
-	commandsize = ft_strlen(str);
-	while (str[i] != '\0')
+	commandsize = ft_strlen2(str);
+	while (str[i] != '\n')
 	{
 		if (commandsize >= 4 && commandsize <= 13)
 		{
-			if (str[i] < ' ' || str[i] > '~')
+			if (str[i] < 32 || str[i] > 126)
 			{
 				ft_putstr("Error");
 				return (0);
 			}
 		}
-		else if (commandsize < 4 || commandsize > 13)
+		else
 		{
 			ft_putstr("Error");
 			return (0);

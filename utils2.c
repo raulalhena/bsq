@@ -6,7 +6,7 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 16:27:17 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 19:23:43 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 20:08:26 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,16 @@ int	ft_strlen(char *str)
 
 	i = 0;
 	while (str[i])
+		i++;
+	return (i);
+}
+
+int	ft_strlen2(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\n')
 		i++;
 	return (i);
 }

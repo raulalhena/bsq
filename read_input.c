@@ -6,7 +6,7 @@
 /*   By: gpujol-r <gpujol-r@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 16:28:59 by gpujol-r          #+#    #+#             */
-/*   Updated: 2021/12/21 19:34:09 by rlopez-m         ###   ########.fr       */
+/*   Updated: 2021/12/21 19:53:28 by rlopez-m         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ int	print_error(int error);
 int	read_input(char **str)
 {
 	int	str_size;
+	char aux[SIZE];
 
-	str_size = read(0, *str, SIZE);
+	str_size = read(0, aux, SIZE);
 	*str = malloc(sizeof(char) * str_size);
 	if (!*str)
 		return (print_error(2));
